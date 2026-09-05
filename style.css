@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-color: #FFF0F3;
     color: #2D1520;
@@ -209,4 +210,217 @@ h3 {
     h2 {
         font-size: 1.5rem;
     }
+=======
+body {
+    background-color: #FFF0F3;
+    color: #2D1520;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Barra de navegación moderna */
+.menu-navegacion {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(201, 28, 78, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-nav img {
+    height: 45px;
+    border-radius: 50%;
+}
+
+.enlaces-nav a {
+    color: #2D1520;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.enlaces-nav a:hover {
+    color: #C91C4E;
+}
+
+/* Títulos con el toque frambuesa */
+h2 {
+    color: #C91C4E;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+h3 {
+    color: #C91C4E;
+}
+
+/* Tarjetas y contenedores limpios */
+.tarjeta-seccion {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(201, 28, 78, 0.05);
+    margin-bottom: 25px;
+}
+
+/* Estilos de contacto */
+.seccion-contacto {
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.direccion { color: #2D1520; font-weight: bold; margin-bottom: 8px; }
+.telefonos { color: #666; font-size: 14px; margin-bottom: 10px; }
+.link-wsp { color: #25d366; font-weight: bold; text-decoration: none; margin-right: 15px; }
+.link-fb { color: #1877f2; font-weight: bold; text-decoration: none; }
+
+/* Galería de imágenes */
+.galeria-fresas {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.galeria-fresas img {
+    width: 110px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.centrado-img {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.foto-batido {
+    width: 160px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Formulario interactivo */
+.campo-form {
+    margin-bottom: 15px;
+}
+
+.campo-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #2D1520;
+}
+
+.campo-form input, .campo-form textarea, .campo-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f3c2cd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.campo-form input:focus, .campo-form textarea:focus, .campo-form select:focus {
+    outline: none;
+    border-color: #C91C4E;
+}
+
+.btn-enviar-wsp {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn-enviar-wsp:hover {
+    background-color: #1ebe57;
+}
+
+.slogan-principal {
+    text-align: center;
+    font-weight: 600;
+    color: #C91C4E;
+    margin-bottom: 20px;
+}
+/* Botón flotante de WhatsApp para celulares y PC */
+.btn-flotante-wsp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-flotante-wsp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.1);
+}
+/* Adaptabilidad perfecta para celulares y pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    /* La barra de navegación se acomoda en vertical para que no se apreten los enlaces */
+    .menu-navegacion {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .enlaces-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .enlaces-nav a {
+        margin-left: 0;
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    /* Las tarjetas ocupan todo el ancho disponible del celular de forma cómoda */
+    .tarjeta-seccion {
+        padding: 15px;
+    }
+
+    /* Reducimos un poco los títulos para pantallas chicas */
+    h2 {
+        font-size: 1.5rem;
+    }
+>>>>>>> 8eaa7a03d121ff5c759d2376849478049abd2167
 }

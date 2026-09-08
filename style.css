@@ -9,6 +9,15 @@
    Tipografía:
      Baloo 2   -> títulos (redonda, con carácter, hecha para antojos)
      Mulish    -> texto de cuerpo (limpia y muy legible)
+
+   Cómo están nombradas las clases (para no perderte):
+     .seccion-*   -> bloques grandes de la página (una sección del menú)
+     .lista-*     -> distintas formas de mostrar listas (con precio, en
+                     chips, en dos columnas...)
+     .boton*      -> botones de llamada a la acción
+     .campo-form  -> cada input/textarea/select del formulario de pedido
+   Cada clase se usa en un solo tipo de elemento para que, si algo se ve
+   mal, sea fácil ubicar en qué parte del HTML está el problema.
    ========================================================= */
 
 :root {

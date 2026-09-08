@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruty Batidos - Helados, Batidos y Fresas con Crema en Cali</title>
     <link rel="icon" href="img/logo.jpeg">
+    <!-- Fuentes de Google Fonts: Baloo 2 para títulos, Mulish para texto normal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Todos los estilos visuales de la página están en style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="inicio">
 
-    <!-- Barra de navegación superior fija -->
+    <!--
+        Barra de navegación: queda fija arriba (sticky) para que el cliente
+        pueda saltar a cualquier sección sin tener que hacer scroll manual.
+        El checkbox "menu-toggle" es un truco de solo CSS (sin JavaScript)
+        para mostrar/ocultar los enlaces en celular al tocar el botón ☰.
+    -->
     <nav class="menu-navegacion">
         <div class="logo-nav">
             <a href="#inicio">
@@ -30,7 +37,11 @@
         </div>
     </nav>
 
-    <!-- Hero principal -->
+    <!--
+        Hero: lo primero que ve el cliente al entrar. Debe responder rápido
+        "¿qué venden?" y "¿cómo pido?", por eso trae los dos botones
+        principales (Hacer un pedido / Ver el menú) junto a una foto real.
+    -->
     <header class="hero">
         <div class="hero-texto">
             <p class="hero-eyebrow">El Cortijo, Cali</p>
@@ -46,7 +57,12 @@
         </div>
     </header>
 
-    <!-- Sección Fresas con Crema -->
+    <!--
+        Sección Fresas con Crema. La lista ".lista-menu" muestra nombre y
+        precio en la misma línea (como una carta de restaurante); la lista
+        ".lista-chips" muestra los toppings como etiquetas, porque no tienen
+        precio individual y se ven mejor agrupados.
+    -->
     <section id="fresas" class="seccion-menu">
         <div class="encabezado-seccion">
             <h2>Fresas con Crema</h2>
@@ -168,7 +184,12 @@
         </ul>
     </section>
 
-    <!-- Sección Interactiva de Pedidos -->
+    <!--
+        Formulario de pedido rápido. No guarda nada en una base de datos:
+        solo junta lo que el cliente escribe y arma un link de WhatsApp
+        con el mensaje ya redactado. La lógica real está en script.js,
+        en la función enviarPedidoWhatsApp().
+    -->
     <section id="pedido-interactivo" class="seccion-pedido">
         <div class="ticket">
             <div class="ticket-encabezado">
@@ -200,7 +221,7 @@
         </div>
     </section>
 
-    <!-- Sección de Contacto, Dirección y Redes -->
+    <!-- Pie de página: datos de contacto y redes, siempre visibles al final -->
     <footer id="contacto" class="pie-pagina">
         <div class="pie-logo">
             <img src="img/logo.jpeg" alt="Logo Fruty Batidos">

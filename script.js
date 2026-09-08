@@ -1,9 +1,20 @@
 /**
- * Captura los datos del formulario de Fruty Batidos, valida que los campos
- * obligatorios no estén vacíos y abre una nueva pestaña de WhatsApp con el pedido listo.
- * 
+ * Captura los datos del formulario de pedido ("Arma tu pedido rápido"),
+ * valida que el nombre y el detalle del pedido no estén vacíos, y abre
+ * una nueva pestaña de WhatsApp con el mensaje ya redactado.
+ *
+ * No usa una base de datos ni un servidor: todo el trabajo pasa en el
+ * navegador del cliente, por eso no hace falta async/await ni promesas.
+ *
+ * Lee estos elementos del HTML (deben existir con estos mismos ids):
+ *   - #nombreCliente   (input de texto)
+ *   - #detallePedido   (textarea)
+ *   - #numeroWhatsApp  (select con el número de WhatsApp destino)
+ *
  * @function enviarPedidoWhatsApp
- * @returns {void} No retorna ningún valor, solo abre la interfaz de WhatsApp.
+ * @returns {void} No retorna ningún valor. Si faltan datos, muestra una
+ *   alerta y no hace nada más. Si todo está bien, abre WhatsApp Web/App
+ *   en una pestaña nueva con el mensaje listo para enviar.
  */
 function enviarPedidoWhatsApp() {
     const nombre = document.getElementById('nombreCliente').value.trim();

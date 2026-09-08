@@ -1,11 +1,13 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruty Batidos - Menú Completo</title>
+    <title>Fruty Batidos - Helados, Batidos y Fresas con Crema en Cali</title>
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body id="inicio">
 
@@ -14,8 +16,11 @@
         <div class="logo-nav">
             <a href="#inicio">
                 <img src="img/logo.jpeg" alt="Logo Fruty Batidos">
+                <span>Fruty Batidos</span>
             </a>
         </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-boton" aria-label="Abrir menú">☰</label>
         <div class="enlaces-nav">
             <a href="#inicio">Inicio</a>
             <a href="#fresas">Fresas</a>
@@ -25,44 +30,50 @@
         </div>
     </nav>
 
-    <p class="slogan-principal">¡Los mejores batidos, fresas con crema y antojos de Cali!</p>
-    
-    <!-- Sección de Contacto, Dirección y Redes -->
-    <div id="contacto" class="seccion-contacto">
-        <p class="direccion">📍 Calle 9 Oeste #52-46, El Cortijo, Cali</p>
-        <p class="telefonos">📲 Pedidos al: 305 360 5857 / 314 638 5335</p>
-        <div class="redes-sociales">
-            <a href="https://wa.me/573053605857?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">💬 WhatsApp 1</a>
-            <a href="https://wa.me/573146385335?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">💬 WhatsApp 2</a>
-            <a href="https://www.facebook.com/share/18JRJpy9Ep/" target="_blank" class="link-fb">👍 Facebook</a>
+    <!-- Hero principal -->
+    <header class="hero">
+        <div class="hero-texto">
+            <p class="hero-eyebrow">El Cortijo, Cali</p>
+            <h1>Antojo de fruta, helado y crema, listo en un vaso.</h1>
+            <p class="hero-descripcion">Fresas con crema, batidos naturales, jugos y chococonos hechos frescos cada día. Pide en línea y te confirmamos por WhatsApp.</p>
+            <div class="hero-botones">
+                <a href="#pedido-interactivo" class="boton boton-primario">Hacer un pedido</a>
+                <a href="#fresas" class="boton boton-secundario">Ver el menú</a>
+            </div>
         </div>
-    </div>
+        <div class="hero-imagen">
+            <img src="img/fresas3.png" alt="Fresas con crema de Fruty Batidos con brownie, oreo y gomas">
+        </div>
+    </header>
 
     <!-- Sección Fresas con Crema -->
-    <div id="fresas" class="tarjeta-seccion">
-        <h2>Fresas con Crema</h2>
-        
-        <div class="galeria-fresas">
-            <img src="img/fresas1.jpeg" alt="Fresas con Crema 1">
-            <img src="img/fresas2.jpeg" alt="Fresas con Crema 2">
-            <img src="img/fresas3.png" alt="Fresas con Crema 3">
+    <section id="fresas" class="seccion-menu">
+        <div class="encabezado-seccion">
+            <h2>Fresas con Crema</h2>
+            <p class="subtitulo-seccion">Elige tu tamaño, luego escoge los toppings</p>
         </div>
 
-        <ul>
-            <li>Vaso de 9 onzas (Con 2 toppings) - $10.000</li>
-            <li>Vaso de 12 onzas (Con 2 toppings) - $13.000</li>
-            <li>Vaso de 16 onzas (Con 3 toppings) - $16.000</li>
-            <li>Vaso de 24 onzas (Con 4 toppings) - $25.000</li>
+        <div class="galeria-fresas">
+            <img src="img/fresas1.jpeg" alt="Fresas con Crema con helado y M&amp;M">
+            <img src="img/fresas2.jpeg" alt="Fresas con Crema con brownie y oreo">
+            <img src="img/fresas3.png" alt="Fresas con Crema con gomas y masmelos">
+        </div>
+
+        <ul class="lista-menu">
+            <li><span>Vaso de 9 onzas <small>(2 toppings)</small></span><span class="precio">$10.000</span></li>
+            <li><span>Vaso de 12 onzas <small>(2 toppings)</small></span><span class="precio">$13.000</span></li>
+            <li><span>Vaso de 16 onzas <small>(3 toppings)</small></span><span class="precio">$16.000</span></li>
+            <li><span>Vaso de 24 onzas <small>(4 toppings)</small></span><span class="precio">$25.000</span></li>
         </ul>
 
-        <h3>Toppings Disponibles</h3>
-        <ul>
+        <h3>Toppings disponibles</h3>
+        <ul class="lista-chips">
             <li>Oreo</li>
             <li>Maní</li>
             <li>Coco</li>
             <li>Quipito</li>
             <li>Gomas</li>
-            <li>M&M</li>
+            <li>M&amp;M</li>
             <li>Masmelo</li>
             <li>Chomelo</li>
             <li>Chips de chocolate</li>
@@ -70,35 +81,41 @@
             <li>Chocoso</li>
             <li>Pingüinos</li>
         </ul>
-        <p><strong>Adicionales:</strong> $1.000</p>
-    </div>
+        <p class="nota-adicional">Toppings adicionales: $1.000 c/u</p>
+    </section>
 
     <!-- Sección Batidos con Helado -->
-    <div id="batidos" class="tarjeta-seccion">
-        <h2>Batidos con Helado ($11.000 c/u)</h2>
-        <div class="centrado-img">
-            <img src="img/batido.jpeg" alt="Batido Fruty Batidos" class="foto-batido">
+    <section id="batidos" class="seccion-menu seccion-alterna">
+        <div class="encabezado-seccion">
+            <h2>Batidos con Helado</h2>
+            <p class="subtitulo-seccion">$11.000 cada uno</p>
         </div>
-        <ul>
-            <li>Frutos de Bosque (Mora, Blueberries, Arándanos, Fresas)</li>
-            <li>Sandía y Maracuyá</li>
-            <li>Crema de Coco, Fresa y Blueberries</li>
-            <li>Maracuyá y Banano</li>
-            <li>Café Vainilla (Incluye esencia de vainilla y canela)</li>
-            <li>Café Moca (Incluye esencia de vainilla y canela)</li>
-            <li>Chocolate y Banano (Incluye esencia de vainilla y canela)</li>
-            <li>Batido de Oreo</li>
-            <li>Durazno, Naranja y Mango</li>
-            <li>Piña y Crema de Coco</li>
-            <li>Sandía, Banano y Crema de Coco</li>
-            <li>Fresa y Guanábana</li>
-        </ul>
-    </div>
+        <div class="batidos-contenido">
+            <img src="img/batido.jpeg" alt="Batido con helado de Fruty Batidos" class="foto-batido">
+            <ul class="lista-menu lista-menu--simple">
+                <li>Frutos de Bosque <small>(Mora, Blueberries, Arándanos, Fresas)</small></li>
+                <li>Sandía y Maracuyá</li>
+                <li>Crema de Coco, Fresa y Blueberries</li>
+                <li>Maracuyá y Banano</li>
+                <li>Café Vainilla <small>(esencia de vainilla y canela)</small></li>
+                <li>Café Moca <small>(esencia de vainilla y canela)</small></li>
+                <li>Chocolate y Banano <small>(esencia de vainilla y canela)</small></li>
+                <li>Batido de Oreo</li>
+                <li>Durazno, Naranja y Mango</li>
+                <li>Piña y Crema de Coco</li>
+                <li>Sandía, Banano y Crema de Coco</li>
+                <li>Fresa y Guanábana</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Sección Refrescantes -->
-    <div class="tarjeta-seccion">
-        <h2>Batidos Refrescantes ($8.000 c/u)</h2>
-        <ul>
+    <section class="seccion-menu">
+        <div class="encabezado-seccion">
+            <h2>Batidos Refrescantes</h2>
+            <p class="subtitulo-seccion">$8.000 cada uno</p>
+        </div>
+        <ul class="lista-menu lista-menu--simple lista-menu--dos-columnas">
             <li>Sandía, Fresa y Limón</li>
             <li>Papaya, Naranja y Piña</li>
             <li>Naranja, Banano y Manzana</li>
@@ -106,253 +123,106 @@
             <li>Papaya, Naranja y Banano</li>
             <li>Mandarina y Fresa</li>
         </ul>
-    </div>
+    </section>
 
     <!-- Sección Proteína -->
-    <div class="tarjeta-seccion">
-        <h2>Batidos de Proteína ($8.000 c/u)</h2>
-        <ul>
-            <li>Proteína (Banano, Naranja y Proteína de Soya)</li>
-            <li>Verde Light (Piña, Apio, Pepino y Perejil)</li>
-            <li>Yerbabuena (Manzana, Piña y Yerbabuena)</li>
+    <section class="seccion-menu seccion-alterna">
+        <div class="encabezado-seccion">
+            <h2>Batidos de Proteína</h2>
+            <p class="subtitulo-seccion">$8.000 cada uno</p>
+        </div>
+        <ul class="lista-menu lista-menu--simple lista-menu--dos-columnas">
+            <li>Proteína <small>(Banano, Naranja y Proteína de Soya)</small></li>
+            <li>Verde Light <small>(Piña, Apio, Pepino y Perejil)</small></li>
+            <li>Yerbabuena <small>(Manzana, Piña y Yerbabuena)</small></li>
         </ul>
-    </div>
+    </section>
 
     <!-- Sección Chococonos -->
-    <div class="tarjeta-seccion">
-        <h2>Chococonos y Cremas</h2>
-        <ul>
-            <li>Conos - $3.000</li>
-            <li>Chococonos - $3.500</li>
-            <li>Ensalada de Frutas - $11.000</li>
-            <li>Banana Split - $11.000</li>
-            <li>Vaso de Helado con Queso - $10.000</li>
-            <li>Jugos en Agua - $5.000</li>
-            <li>Jugos en Leche - $6.000</li>
+    <section class="seccion-menu">
+        <div class="encabezado-seccion">
+            <h2>Chococonos y Cremas</h2>
+        </div>
+        <ul class="lista-menu">
+            <li><span>Conos</span><span class="precio">$3.000</span></li>
+            <li><span>Chococonos</span><span class="precio">$3.500</span></li>
+            <li><span>Ensalada de Frutas</span><span class="precio">$11.000</span></li>
+            <li><span>Banana Split</span><span class="precio">$11.000</span></li>
+            <li><span>Vaso de Helado con Queso</span><span class="precio">$10.000</span></li>
+            <li><span>Jugos en Agua</span><span class="precio">$5.000</span></li>
+            <li><span>Jugos en Leche</span><span class="precio">$6.000</span></li>
         </ul>
-    </div>
+    </section>
 
     <!-- Sección Limonadas -->
-    <div class="tarjeta-seccion">
-        <h2>Limonadas y Frapes ($8.000 c/u)</h2>
-        <ul>
-            <li>Limonada de Coco - $8.000</li>
-            <li>Limonada Cerezada - $8.000</li>
-            <li>Limonada Natural - $8.000</li>
-            <li>Limonada Mango Biche - $8.000</li>
+    <section class="seccion-menu seccion-alterna">
+        <div class="encabezado-seccion">
+            <h2>Limonadas y Frapes</h2>
+            <p class="subtitulo-seccion">$8.000 cada una</p>
+        </div>
+        <ul class="lista-menu lista-menu--simple lista-menu--dos-columnas">
+            <li>Limonada de Coco</li>
+            <li>Limonada Cerezada</li>
+            <li>Limonada Natural</li>
+            <li>Limonada Mango Biche</li>
         </ul>
-    </div>
+    </section>
 
     <!-- Sección Interactiva de Pedidos -->
-    <div id="pedido-interactivo" class="tarjeta-seccion formulario-caja">
-        <h2>Arma tu Pedido Rápido</h2>
-        
-        <div class="campo-form">
-            <label>Tu Nombre:</label>
-            <input type="text" id="nombreCliente" placeholder="Ej. Ana García">
-        </div>
+    <section id="pedido-interactivo" class="seccion-pedido">
+        <div class="ticket">
+            <div class="ticket-encabezado">
+                <h2>Arma tu pedido rápido</h2>
+                <p>Cuéntanos qué se te antoja y lo enviamos por WhatsApp</p>
+            </div>
 
-        <div class="campo-form">
-            <label>¿Qué deseas pedir?</label>
-            <textarea id="detallePedido" rows="3" placeholder="Ej. 1 Vaso de Fresas de 12oz con Oreo y Maní..."></textarea>
-        </div>
+            <div class="campo-form">
+                <label for="nombreCliente">Tu nombre</label>
+                <input type="text" id="nombreCliente" placeholder="Ej. Ana García">
+            </div>
 
-        <div class="campo-form">
-            <label>Elige el WhatsApp para enviar el pedido:</label>
-            <select id="numeroWhatsApp">
-                <option value="573053605857">WhatsApp 1 (305 360 5857)</option>
-                <option value="573146385335">WhatsApp 2 (314 638 5335)</option>
-            </select>
-        </div>
+            <div class="campo-form">
+                <label for="detallePedido">¿Qué deseas pedir?</label>
+                <textarea id="detallePedido" rows="3" placeholder="Ej. 1 Vaso de Fresas de 12oz con Oreo y Maní..."></textarea>
+            </div>
 
-        <button onclick="enviarPedidoWhatsApp()" class="btn-enviar-wsp">
-            💬 Enviar Pedido por WhatsApp
-        </button>
-    </div>
-<!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/573053605857?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="btn-flotante-wsp">
-        💬
-    </a>
-    <!-- Enlace al archivo de JavaScript -->
-    <script src="script.js"></script>
-</body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruty Batidos - Menú Completo</title>
-</head>
-<body id="inicio">
+            <div class="campo-form">
+                <label for="numeroWhatsApp">Elige el WhatsApp para enviar el pedido</label>
+                <select id="numeroWhatsApp">
+                    <option value="573053605857">WhatsApp 1 (305 360 5857)</option>
+                    <option value="573146385335">WhatsApp 2 (314 638 5335)</option>
+                </select>
+            </div>
 
-    <!-- Barra de navegación superior fija -->
-    <nav class="menu-navegacion">
-        <div class="logo-nav">
-            <a href="#inicio">
-                <img src="img/logo.jpeg" alt="Logo Fruty Batidos">
-            </a>
+            <button onclick="enviarPedidoWhatsApp()" class="btn-enviar-wsp">
+                Enviar pedido por WhatsApp
+            </button>
         </div>
-        <div class="enlaces-nav">
-            <a href="#inicio">Inicio</a>
-            <a href="#fresas">Fresas</a>
-            <a href="#batidos">Batidos</a>
-            <a href="#pedido-interactivo">Pedidos</a>
-            <a href="#contacto">Contacto</a>
-        </div>
-    </nav>
+    </section>
 
-    <p class="slogan-principal">¡Los mejores batidos, fresas con crema y antojos de Cali!</p>
-    
     <!-- Sección de Contacto, Dirección y Redes -->
-    <div id="contacto" class="seccion-contacto">
-        <p class="direccion">📍 Calle 9 Oeste #52-42, El Cortijo, Cali</p>
-        <p class="telefonos">📲 Pedidos al: 305 207 5693 / 314 638 5335</p>
-        <div class="redes-sociales">
-            <a href="https://wa.me/573052075693?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">💬 WhatsApp 1</a>
-            <a href="https://wa.me/573146385335?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">💬 WhatsApp 2</a>
-            <a href="https://www.facebook.com/share/18JRJpy9Ep/" target="_blank" class="link-fb">👍 Facebook</a>
+    <footer id="contacto" class="pie-pagina">
+        <div class="pie-logo">
+            <img src="img/logo.jpeg" alt="Logo Fruty Batidos">
+            <p>Fruty Batidos</p>
         </div>
-    </div>
-
-    <!-- Sección Fresas con Crema -->
-    <div id="fresas" class="tarjeta-seccion">
-        <h2>Fresas con Crema</h2>
-        
-        <div class="galeria-fresas">
-            <img src="img/fresas1.jpeg" alt="Fresas con Crema 1">
-            <img src="img/fresas2.jpeg" alt="Fresas con Crema 2">
-            <img src="img/fresas3.png" alt="Fresas con Crema 3">
+        <div class="pie-datos">
+            <p class="direccion">📍 Calle 9 Oeste #52-46, El Cortijo, Cali</p>
+            <p class="telefonos">📲 Pedidos al: 305 360 5857 / 314 638 5335</p>
+            <div class="redes-sociales">
+                <a href="https://wa.me/573053605857?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">WhatsApp 1</a>
+                <a href="https://wa.me/573146385335?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="link-wsp">WhatsApp 2</a>
+                <a href="https://www.facebook.com/share/18JRJpy9Ep/" target="_blank" class="link-fb">Facebook</a>
+            </div>
         </div>
+    </footer>
 
-        <ul>
-            <li>Vaso de 9 onzas (Con 2 toppings) - $10.000</li>
-            <li>Vaso de 12 onzas (Con 2 toppings) - $13.000</li>
-            <li>Vaso de 16 onzas (Con 3 toppings) - $16.000</li>
-            <li>Vaso de 24 onzas (Con 4 toppings) - $25.000</li>
-        </ul>
-
-        <h3>Toppings Disponibles</h3>
-        <ul>
-            <li>Oreo</li>
-            <li>Maní</li>
-            <li>Coco</li>
-            <li>Quipito</li>
-            <li>Gomas</li>
-            <li>M&M</li>
-            <li>Masmelo</li>
-            <li>Chomelo</li>
-            <li>Chips de chocolate</li>
-            <li>Mini brownie</li>
-            <li>Chocoso</li>
-            <li>Pingüinos</li>
-        </ul>
-        <p><strong>Adicionales:</strong> $1.000</p>
-    </div>
-
-    <!-- Sección Batidos con Helado -->
-    <div id="batidos" class="tarjeta-seccion">
-        <h2>Batidos con Helado ($11.000 c/u)</h2>
-        <div class="centrado-img">
-            <img src="img/batido.jpeg" alt="Batido Fruty Batidos" class="foto-batido">
-        </div>
-        <ul>
-            <li>Frutos de Bosque (Mora, Blueberries, Arándanos, Fresas)</li>
-            <li>Sandía y Maracuyá</li>
-            <li>Crema de Coco, Fresa y Blueberries</li>
-            <li>Maracuyá y Banano</li>
-            <li>Café Vainilla (Incluye esencia de vainilla y canela)</li>
-            <li>Café Moca (Incluye esencia de vainilla y canela)</li>
-            <li>Chocolate y Banano (Incluye esencia de vainilla y canela)</li>
-            <li>Batido de Oreo</li>
-            <li>Durazno, Naranja y Mango</li>
-            <li>Piña y Crema de Coco</li>
-            <li>Sandía, Banano y Crema de Coco</li>
-            <li>Fresa y Guanábana</li>
-        </ul>
-    </div>
-
-    <!-- Sección Refrescantes -->
-    <div class="tarjeta-seccion">
-        <h2>Batidos Refrescantes ($8.000 c/u)</h2>
-        <ul>
-            <li>Sandía, Fresa y Limón</li>
-            <li>Papaya, Naranja y Piña</li>
-            <li>Naranja, Banano y Manzana</li>
-            <li>Piña, Fresa y Mango</li>
-            <li>Papaya, Naranja y Banano</li>
-            <li>Mandarina y Fresa</li>
-        </ul>
-    </div>
-
-    <!-- Sección Proteína -->
-    <div class="tarjeta-seccion">
-        <h2>Batidos de Proteína ($8.000 c/u)</h2>
-        <ul>
-            <li>Proteína (Banano, Naranja y Proteína de Soya)</li>
-            <li>Verde Light (Piña, Apio, Pepino y Perejil)</li>
-            <li>Yerbabuena (Manzana, Piña y Yerbabuena)</li>
-        </ul>
-    </div>
-
-    <!-- Sección Chococonos -->
-    <div class="tarjeta-seccion">
-        <h2>Chococonos y Cremas</h2>
-        <ul>
-            <li>Conos - $3.000</li>
-            <li>Chococonos - $3.500</li>
-            <li>Ensalada de Frutas - $11.000</li>
-            <li>Banana Split - $11.000</li>
-            <li>Vaso de Helado con Queso - $10.000</li>
-            <li>Jugos en Agua - $5.000</li>
-            <li>Jugos en Leche - $6.000</li>
-        </ul>
-    </div>
-
-    <!-- Sección Limonadas -->
-    <div class="tarjeta-seccion">
-        <h2>Limonadas y Frapes ($8.000 c/u)</h2>
-        <ul>
-            <li>Limonada de Coco - $8.000</li>
-            <li>Limonada Cerezada - $8.000</li>
-            <li>Limonada Natural - $8.000</li>
-            <li>Limonada Mango Biche - $8.000</li>
-        </ul>
-    </div>
-
-    <!-- Sección Interactiva de Pedidos -->
-    <div id="pedido-interactivo" class="tarjeta-seccion formulario-caja">
-        <h2>Arma tu Pedido Rápido</h2>
-        
-        <div class="campo-form">
-            <label>Tu Nombre:</label>
-            <input type="text" id="nombreCliente" placeholder="Ej. Ana García">
-        </div>
-
-        <div class="campo-form">
-            <label>¿Qué deseas pedir?</label>
-            <textarea id="detallePedido" rows="3" placeholder="Ej. 1 Vaso de Fresas de 12oz con Oreo y Maní..."></textarea>
-        </div>
-
-        <div class="campo-form">
-            <label>Elige el WhatsApp para enviar el pedido:</label>
-            <select id="numeroWhatsApp">
-                <option value="573052075693">WhatsApp 1 (305 207 5693)</option>
-                <option value="573146385335">WhatsApp 2 (314 638 5335)</option>
-            </select>
-        </div>
-
-        <button onclick="enviarPedidoWhatsApp()" class="btn-enviar-wsp">
-            💬 Enviar Pedido por WhatsApp
-        </button>
-    </div>
-<!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/573052075693?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="btn-flotante-wsp">
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573053605857?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20de%20Fruty%20Batidos" target="_blank" class="btn-flotante-wsp" aria-label="Escribir por WhatsApp">
         💬
     </a>
+
     <!-- Enlace al archivo de JavaScript -->
     <script src="script.js"></script>
 </body>
->>>>>>> 8eaa7a03d121ff5c759d2376849478049abd2167
 </html>

@@ -1,426 +1,610 @@
-<<<<<<< HEAD
-body {
-    background-color: #FFF0F3;
-    color: #2D1520;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
+/* =========================================================
+   FRUTY BATIDOS — hoja de estilos
+   Paleta:
+     Crema base   #FFF7F2
+     Frambuesa    #C91C4E  (marca / botones principales)
+     Ciruela      #2B1420  (texto)
+     Menta        #2FA88A  (acentos secundarios / enlaces)
+     Mango        #FF9F1C  (detalles cálidos, hover)
+   Tipografía:
+     Baloo 2   -> títulos (redonda, con carácter, hecha para antojos)
+     Mulish    -> texto de cuerpo (limpia y muy legible)
+   ========================================================= */
+
+:root {
+    --crema: #FFF7F2;
+    --frambuesa: #C91C4E;
+    --frambuesa-oscura: #A11640;
+    --ciruela: #2B1420;
+    --menta: #2FA88A;
+    --mango: #FF9F1C;
+    --rosa-suave: #FFE3EA;
+    --borde-suave: #F4C9D3;
 }
 
-/* Barra de navegación moderna */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--crema);
+    color: var(--ciruela);
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Baloo 2', sans-serif;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    font-family: inherit;
+}
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
 .menu-navegacion {
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 15px rgba(201, 28, 78, 0.08);
+    background-color: var(--crema);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 14px 6%;
+    border-bottom: 2px solid var(--rosa-suave);
+}
+
+.logo-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo-nav img {
-    height: 45px;
+    height: 42px;
+    width: 42px;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-nav span {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.2rem;
+    color: var(--frambuesa);
+    font-weight: 700;
+}
+
+.enlaces-nav {
+    display: flex;
+    align-items: center;
 }
 
 .enlaces-nav a {
-    color: #2D1520;
+    color: var(--ciruela);
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    margin-left: 28px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 .enlaces-nav a:hover {
-    color: #C91C4E;
+    color: var(--frambuesa);
 }
 
-/* Títulos con el toque frambuesa */
-h2 {
-    color: #C91C4E;
+.menu-toggle,
+.menu-boton {
+    display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 6% 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-eyebrow {
+    color: var(--menta);
+    font-weight: 700;
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+}
+
+.hero-texto h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--ciruela);
+}
+
+.hero-descripcion {
+    margin: 18px 0 28px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 46ch;
+    color: #56404A;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.boton {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-primario {
+    background-color: var(--frambuesa);
+    color: white;
+    box-shadow: 0 8px 20px rgba(201, 28, 78, 0.3);
+}
+
+.boton-primario:hover {
+    background-color: var(--frambuesa-oscura);
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--ciruela);
+    border: 2px solid var(--ciruela);
+}
+
+.boton-secundario:hover {
+    border-color: var(--frambuesa);
+    color: var(--frambuesa);
+}
+
+.hero-imagen {
+    position: relative;
+}
+
+.hero-imagen img {
+    border-radius: 26px;
+    box-shadow: 0 20px 40px rgba(43, 20, 32, 0.18);
+    transform: rotate(2deg);
+}
+
+/* =========================================================
+   SECCIONES DE MENÚ
+   ========================================================= */
+.seccion-menu {
+    padding: 56px 6%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seccion-alterna {
+    background-color: var(--rosa-suave);
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.seccion-alterna > * {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.encabezado-seccion {
     text-align: center;
-    font-size: 1.8rem;
-    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-h3 {
-    color: #C91C4E;
+.seccion-menu h2 {
+    color: var(--frambuesa);
+    font-size: 2rem;
 }
 
-/* Tarjetas y contenedores limpios */
-.tarjeta-seccion {
-    background-color: #FFFFFF;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(201, 28, 78, 0.05);
-    margin-bottom: 25px;
+.subtitulo-seccion {
+    margin: 6px 0 0;
+    color: var(--menta);
+    font-weight: 700;
 }
 
-/* Estilos de contacto */
-.seccion-contacto {
-    text-align: center;
-    margin-bottom: 25px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+.seccion-menu h3 {
+    color: var(--frambuesa);
+    font-size: 1.2rem;
+    margin: 30px 0 14px;
 }
 
-.direccion { color: #2D1520; font-weight: bold; margin-bottom: 8px; }
-.telefonos { color: #666; font-size: 14px; margin-bottom: 10px; }
-.link-wsp { color: #25d366; font-weight: bold; text-decoration: none; margin-right: 15px; }
-.link-fb { color: #1877f2; font-weight: bold; text-decoration: none; }
-
-/* Galería de imágenes */
+/* Galería de fresas */
 .galeria-fresas {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 15px 0;
+    gap: 18px;
+    margin: 0 0 36px;
     flex-wrap: wrap;
 }
 
 .galeria-fresas img {
-    width: 110px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(43, 20, 32, 0.15);
+    transition: transform 0.2s ease;
 }
 
-.centrado-img {
-    text-align: center;
-    margin: 15px auto;
+.galeria-fresas img:nth-child(2) {
+    transform: rotate(-2deg);
 }
 
-.foto-batido {
-    width: 160px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.galeria-fresas img:nth-child(3) {
+    transform: rotate(2deg);
 }
 
-/* Formulario interactivo */
-.campo-form {
-    margin-bottom: 15px;
+.galeria-fresas img:hover {
+    transform: scale(1.05);
 }
 
-.campo-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: #2D1520;
-}
-
-.campo-form input, .campo-form textarea, .campo-form select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #f3c2cd;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-family: inherit;
-}
-
-.campo-form input:focus, .campo-form textarea:focus, .campo-form select:focus {
-    outline: none;
-    border-color: #C91C4E;
-}
-
-.btn-enviar-wsp {
-    background-color: #25d366;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    transition: background 0.3s ease;
-}
-
-.btn-enviar-wsp:hover {
-    background-color: #1ebe57;
-}
-
-.slogan-principal {
-    text-align: center;
-    font-weight: 600;
-    color: #C91C4E;
-    margin-bottom: 20px;
-}
-/* Botón flotante de WhatsApp para celulares y PC */
-.btn-flotante-wsp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    z-index: 9999;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.btn-flotante-wsp:hover {
-    background-color: #1ebe57;
-    transform: scale(1.1);
-}
-/* Adaptabilidad perfecta para celulares y pantallas pequeñas */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    /* La barra de navegación se acomoda en vertical para que no se apreten los enlaces */
-    .menu-navegacion {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-    }
-
-    .enlaces-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .enlaces-nav a {
-        margin-left: 0;
-        margin: 0 8px;
-        font-size: 14px;
-    }
-
-    /* Las tarjetas ocupan todo el ancho disponible del celular de forma cómoda */
-    .tarjeta-seccion {
-        padding: 15px;
-    }
-
-    /* Reducimos un poco los títulos para pantallas chicas */
-    h2 {
-        font-size: 1.5rem;
-    }
-=======
-body {
-    background-color: #FFF0F3;
-    color: #2D1520;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Lista tipo menú de carta, con precio alineado a la derecha */
+.lista-menu {
+    list-style: none;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-/* Barra de navegación moderna */
-.menu-navegacion {
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 15px rgba(201, 28, 78, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.lista-menu li {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--borde-suave);
+    font-size: 1.02rem;
 }
 
-.logo-nav img {
-    height: 45px;
-    border-radius: 50%;
+.lista-menu li:last-child {
+    border-bottom: none;
 }
 
-.enlaces-nav a {
-    color: #2D1520;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.lista-menu li small {
+    display: block;
+    color: #8A6B75;
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin-top: 2px;
 }
 
-.enlaces-nav a:hover {
-    color: #C91C4E;
+.precio {
+    font-weight: 700;
+    color: var(--frambuesa);
+    white-space: nowrap;
 }
 
-/* Títulos con el toque frambuesa */
-h2 {
-    color: #C91C4E;
-    text-align: center;
-    font-size: 1.8rem;
-    margin-top: 10px;
+.lista-menu--simple li {
+    display: block;
 }
 
-h3 {
-    color: #C91C4E;
+.lista-menu--dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
 }
 
-/* Tarjetas y contenedores limpios */
-.tarjeta-seccion {
-    background-color: #FFFFFF;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(201, 28, 78, 0.05);
-    margin-bottom: 25px;
-}
-
-/* Estilos de contacto */
-.seccion-contacto {
-    text-align: center;
-    margin-bottom: 25px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.direccion { color: #2D1520; font-weight: bold; margin-bottom: 8px; }
-.telefonos { color: #666; font-size: 14px; margin-bottom: 10px; }
-.link-wsp { color: #25d366; font-weight: bold; text-decoration: none; margin-right: 15px; }
-.link-fb { color: #1877f2; font-weight: bold; text-decoration: none; }
-
-/* Galería de imágenes */
-.galeria-fresas {
+/* Toppings como chips */
+.lista-chips {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 15px 0;
     flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
-.galeria-fresas img {
-    width: 110px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.lista-chips li {
+    background-color: var(--rosa-suave);
+    color: var(--frambuesa-oscura);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
-.centrado-img {
-    text-align: center;
-    margin: 15px auto;
+.seccion-alterna .lista-chips li {
+    background-color: white;
+}
+
+.nota-adicional {
+    margin-top: 20px;
+    font-weight: 700;
+    color: var(--mango);
+}
+
+/* Batidos con foto */
+.batidos-contenido {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
+    align-items: start;
 }
 
 .foto-batido {
-    width: 160px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(43, 20, 32, 0.15);
 }
 
-/* Formulario interactivo */
+/* =========================================================
+   TICKET DE PEDIDO
+   ========================================================= */
+.seccion-pedido {
+    padding: 60px 6%;
+    display: flex;
+    justify-content: center;
+}
+
+.ticket {
+    background-color: white;
+    border: 2px dashed var(--frambuesa);
+    border-radius: 18px;
+    padding: 36px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 14px 30px rgba(43, 20, 32, 0.12);
+}
+
+.ticket-encabezado {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.ticket-encabezado h2 {
+    color: var(--frambuesa);
+    font-size: 1.7rem;
+}
+
+.ticket-encabezado p {
+    margin: 8px 0 0;
+    color: #56404A;
+}
+
 .campo-form {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .campo-form label {
-    font-weight: bold;
+    font-weight: 700;
     display: block;
-    margin-bottom: 5px;
-    color: #2D1520;
+    margin-bottom: 6px;
+    color: var(--ciruela);
+    font-size: 0.9rem;
 }
 
-.campo-form input, .campo-form textarea, .campo-form select {
+.campo-form input,
+.campo-form textarea,
+.campo-form select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #f3c2cd;
-    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid var(--borde-suave);
+    border-radius: 8px;
     box-sizing: border-box;
     font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--crema);
 }
 
-.campo-form input:focus, .campo-form textarea:focus, .campo-form select:focus {
+.campo-form input:focus,
+.campo-form textarea:focus,
+.campo-form select:focus {
     outline: none;
-    border-color: #C91C4E;
+    border-color: var(--frambuesa);
 }
 
 .btn-enviar-wsp {
-    background-color: #25d366;
+    background-color: var(--menta);
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 14px 20px;
     font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
+    font-weight: 700;
+    font-family: inherit;
+    border-radius: 999px;
     cursor: pointer;
     width: 100%;
     text-align: center;
-    transition: background 0.3s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-enviar-wsp:hover {
-    background-color: #1ebe57;
+    background-color: #24876D;
+    transform: translateY(-2px);
 }
 
-.slogan-principal {
-    text-align: center;
-    font-weight: 600;
-    color: #C91C4E;
-    margin-bottom: 20px;
+/* =========================================================
+   PIE DE PÁGINA / CONTACTO
+   ========================================================= */
+.pie-pagina {
+    background-color: var(--ciruela);
+    color: var(--crema);
+    padding: 48px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
 }
-/* Botón flotante de WhatsApp para celulares y PC */
+
+.pie-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pie-logo img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pie-logo p {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.pie-datos {
+    text-align: right;
+}
+
+.direccion,
+.telefonos {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    color: #F4D9DF;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.link-wsp,
+.link-fb {
+    color: var(--crema);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 2px solid var(--menta);
+    padding-bottom: 2px;
+}
+
+.link-fb {
+    border-bottom-color: var(--mango);
+}
+
+/* Botón flotante de WhatsApp */
 .btn-flotante-wsp {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
+    bottom: 22px;
+    right: 22px;
+    background-color: var(--menta);
     color: white;
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    font-size: 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     z-index: 9999;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .btn-flotante-wsp:hover {
-    background-color: #1ebe57;
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
-/* Adaptabilidad perfecta para celulares y pantallas pequeñas */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
+        text-align: left;
     }
 
-    /* La barra de navegación se acomoda en vertical para que no se apreten los enlaces */
-    .menu-navegacion {
+    .hero-imagen {
+        order: -1;
+    }
+
+    .hero-imagen img {
+        max-height: 320px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .batidos-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-batido {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .lista-menu--dos-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-pagina {
         flex-direction: column;
-        padding: 10px;
-        gap: 10px;
+        text-align: center;
+    }
+
+    .pie-datos {
+        text-align: center;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .menu-boton {
+        display: block;
+        font-size: 1.6rem;
+        background: none;
+        border: none;
+        color: var(--frambuesa);
+        cursor: pointer;
+        order: 2;
     }
 
     .enlaces-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        margin-top: 14px;
     }
 
     .enlaces-nav a {
-        margin-left: 0;
-        margin: 0 8px;
-        font-size: 14px;
+        margin: 10px 0;
     }
 
-    /* Las tarjetas ocupan todo el ancho disponible del celular de forma cómoda */
-    .tarjeta-seccion {
-        padding: 15px;
+    .menu-toggle:checked ~ .enlaces-nav {
+        display: flex;
     }
 
-    /* Reducimos un poco los títulos para pantallas chicas */
-    h2 {
-        font-size: 1.5rem;
+    .menu-navegacion {
+        flex-wrap: wrap;
     }
->>>>>>> 8eaa7a03d121ff5c759d2376849478049abd2167
+
+    .galeria-fresas img {
+        width: 100px;
+        height: 100px;
+    }
 }

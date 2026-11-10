@@ -1,0 +1,167 @@
+/* =========================================================
+   admin.css: el diseño del panel de administrador.
+   Usa los mismos colores y letras que style.css para que
+   se vea igual que el resto de la página.
+   ========================================================= */
+
+:root {
+    --crema: #FFF7F2;
+    --frambuesa: #C91C4E;
+    --frambuesa-oscura: #A11640;
+    --ciruela: #2B1420;
+    --menta: #2FA88A;
+    --rosa-suave: #FFE3EA;
+    --borde-suave: #F4C9D3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Hace que lo que tiene "hidden" realmente se esconda */
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--crema);
+    color: var(--ciruela);
+    font-family: 'Mulish', sans-serif;
+}
+
+.admin {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* La tarjeta blanca donde va el login o el panel */
+.tarjeta {
+    width: 100%;
+    max-width: 420px;
+    background-color: white;
+    border: 2px solid var(--rosa-suave);
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 14px 30px rgba(43, 20, 32, 0.12);
+}
+
+.admin-logo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.6rem;
+    color: var(--frambuesa);
+}
+
+.subtitulo {
+    margin: 6px 0 24px;
+    color: var(--menta);
+    font-weight: 700;
+}
+
+.nota {
+    margin: 0 0 24px;
+    color: #56404A;
+}
+
+/* Los campos del formulario */
+.campo {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde-suave);
+    border-radius: 8px;
+    background-color: var(--crema);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--frambuesa);
+}
+
+/* Mensaje de error */
+.mensaje-error {
+    margin: 0 0 16px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: var(--rosa-suave);
+    color: var(--frambuesa-oscura);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* Botones */
+.boton {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--frambuesa);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--frambuesa-oscura);
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--ciruela);
+    border: 2px solid var(--ciruela);
+}
+
+.boton-secundario:hover {
+    background-color: transparent;
+    border-color: var(--frambuesa);
+    color: var(--frambuesa);
+}
+
+.enlace-volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--ciruela);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-volver:hover {
+    color: var(--frambuesa);
+}

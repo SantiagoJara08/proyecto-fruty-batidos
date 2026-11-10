@@ -1,4 +1,4 @@
-// crearAdmin.js
+
 // Crea el primer usuario administrador. Se corre así (con tus datos):
 //   node crearAdmin.js "Tu Nombre" tucorreo@gmail.com tuClaveSegura
 // Así la clave del admin no queda escrita en ningún archivo del proyecto.

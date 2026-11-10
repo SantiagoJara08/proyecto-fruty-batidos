@@ -10,9 +10,9 @@ const rutasAuth = require("./routes/auth");
 
 const app = express();
 
-// cors permite que tu página (en GitHub Pages) pueda pedirle datos a este servidor.
+
 app.use(cors());
-// express.json permite leer el JSON que llega en el body de las peticiones.
+
 app.use(express.json());
 
 // Ruta de bienvenida

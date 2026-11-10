@@ -23,6 +23,12 @@ const btnSalir = document.getElementById("btn-salir");
 const nombreAdmin = document.getElementById("nombre-admin");
 const estadoProductos = document.getElementById("estado-productos");
 const listaProductos = document.getElementById("lista-productos");
+const formProducto = document.getElementById("form-producto");
+const inputNombreProducto = document.getElementById("nombre-producto");
+const inputPrecioProducto = document.getElementById("precio-producto");
+const inputDescripcionProducto = document.getElementById("descripcion-producto");
+const mensajeProducto = document.getElementById("mensaje-producto");
+const btnAgregar = document.getElementById("btn-agregar");
 
 /**
  * Muestra un mensaje de error en rojo debajo de los campos.
@@ -42,6 +48,7 @@ function mostrarPanel(nombre) {
     vistaLogin.hidden = true;
     vistaPanel.hidden = false;
     // Al abrir el panel, cargamos los productos de la base de datos
+    mensajeProducto.hidden = true;
     cargarProductos();
 }
 
@@ -164,6 +171,75 @@ async function cargarProductos() {
 }
 
 /**
+ * Muestra un aviso debajo del formulario de productos.
+ * Si "esError" es true sale en rojo, si no sale en verde.
+ */
+function mostrarMensajeProducto(texto, esError) {
+    mensajeProducto.textContent = texto;
+    mensajeProducto.className = esError ? "mensaje-error" : "mensaje-ok";
+    mensajeProducto.hidden = false;
+}
+
+/**
+ * Se ejecuta cuando le dan a "Agregar producto".
+ * Manda el producto nuevo al servidor junto con el token (el "pase" de administrador).
+ * Si sale bien, vuelve a cargar la lista para que se vea el producto nuevo.
+ */
+async function agregarProducto(evento) {
+    evento.preventDefault();
+    mensajeProducto.hidden = true;
+
+    const nombre = inputNombreProducto.value.trim();
+    const precio = Number(inputPrecioProducto.value);
+    const descripcion = inputDescripcionProducto.value.trim();
+
+    if (!nombre || inputPrecioProducto.value === "" || precio < 0) {
+        mostrarMensajeProducto("Escribe el nombre y un precio válido.", true);
+        return;
+    }
+
+    const token = sessionStorage.getItem("token");
+
+    // Bloqueamos el botón para que no lo toquen dos veces seguidas
+    btnAgregar.disabled = true;
+    btnAgregar.textContent = "Agregando...";
+
+    try {
+        const respuesta = await fetch(`${API_URL}/api/productos`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                // Aquí va el token. Sin él, el servidor responde error 401
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ nombre, precio, descripcion })
+        });
+        const datos = await respuesta.json();
+
+        // 401 o 403: el token venció (dura 2 horas) o no es de un administrador
+        if (respuesta.status === 401 || respuesta.status === 403) {
+            cerrarSesion();
+            mostrarError("Tu sesión venció. Vuelve a entrar.");
+            return;
+        }
+
+        if (!respuesta.ok) {
+            mostrarMensajeProducto(datos.error || "No se pudo agregar el producto.", true);
+            return;
+        }
+
+        formProducto.reset();
+        mostrarMensajeProducto("Producto agregado.", false);
+        cargarProductos();
+    } catch (error) {
+        mostrarMensajeProducto("No se pudo conectar con el servidor.", true);
+    } finally {
+        btnAgregar.disabled = false;
+        btnAgregar.textContent = "Agregar producto";
+    }
+}
+
+/**
  * Cierra la sesión: borra lo que guardamos y vuelve al login.
  */
 function cerrarSesion() {
@@ -181,3 +257,4 @@ if (sessionStorage.getItem("token") && nombreGuardado) {
 // Le decimos a cada botón qué función ejecutar cuando lo toquen
 formLogin.addEventListener("submit", iniciarSesion);
 btnSalir.addEventListener("click", cerrarSesion);
+formProducto.addEventListener("submit", agregarProducto);

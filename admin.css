@@ -207,3 +207,21 @@ h1 {
     font-weight: 700;
     color: var(--frambuesa);
 }
+
+/* Formulario para agregar productos */
+.form-producto {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+/* Aviso verde cuando el producto se agregó bien */
+.mensaje-ok {
+    margin: 0 0 16px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #E3F5EF;
+    color: #1F7A63;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: left;
+}

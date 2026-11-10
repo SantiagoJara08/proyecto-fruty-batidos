@@ -21,6 +21,8 @@ const mensajeError = document.getElementById("mensaje-error");
 const btnEntrar = document.getElementById("btn-entrar");
 const btnSalir = document.getElementById("btn-salir");
 const nombreAdmin = document.getElementById("nombre-admin");
+const estadoProductos = document.getElementById("estado-productos");
+const listaProductos = document.getElementById("lista-productos");
 
 /**
  * Muestra un mensaje de error en rojo debajo de los campos.
@@ -39,6 +41,8 @@ function mostrarPanel(nombre) {
     nombreAdmin.textContent = nombre;
     vistaLogin.hidden = true;
     vistaPanel.hidden = false;
+    // Al abrir el panel, cargamos los productos de la base de datos
+    cargarProductos();
 }
 
 /**
@@ -108,6 +112,54 @@ async function iniciarSesion(evento) {
         // Pase lo que pase, el botón vuelve a quedar como estaba
         btnEntrar.disabled = false;
         btnEntrar.textContent = "Entrar";
+    }
+}
+
+/**
+ * Le pide los productos al servidor y los muestra en la lista del panel.
+ * Esta ruta es pública, así que no necesita el token.
+ */
+async function cargarProductos() {
+    estadoProductos.textContent = "Cargando productos...";
+    estadoProductos.hidden = false;
+    listaProductos.textContent = "";
+
+    try {
+        const respuesta = await fetch(`${API_URL}/api/productos`);
+        const productos = await respuesta.json();
+
+        if (!respuesta.ok) {
+            estadoProductos.textContent = "No se pudieron cargar los productos.";
+            return;
+        }
+
+        if (productos.length === 0) {
+            estadoProductos.textContent = "Todavía no hay productos.";
+            return;
+        }
+
+        // Por cada producto armamos un renglón de la lista
+        productos.forEach((producto) => {
+            const item = document.createElement("li");
+
+            const nombre = document.createElement("strong");
+            nombre.textContent = producto.nombre;
+
+            const precio = document.createElement("span");
+            precio.className = "precio";
+            precio.textContent = "$" + producto.precio.toLocaleString("es-CO");
+
+            const descripcion = document.createElement("p");
+            descripcion.textContent = producto.descripcion;
+
+            item.append(nombre, precio, descripcion);
+            listaProductos.appendChild(item);
+        });
+
+        // Ya hay lista, así que escondemos el aviso de "Cargando"
+        estadoProductos.hidden = true;
+    } catch (error) {
+        estadoProductos.textContent = "No se pudo conectar con el servidor.";
     }
 }
 

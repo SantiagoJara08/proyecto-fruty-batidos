@@ -49,7 +49,10 @@
         <section id="vista-panel" class="tarjeta" hidden>
             <h1>Hola, <span id="nombre-admin"></span></h1>
             <p class="subtitulo">Sesión iniciada como administrador</p>
-            <p class="nota">Aquí va a ir la gestión de productos.</p>
+            <!-- Lista de productos: admin.js la llena con lo que viene de la base de datos -->
+            <h2 class="titulo-lista">Productos</h2>
+            <p id="estado-productos" class="nota">Cargando productos...</p>
+            <ul id="lista-productos" class="lista-productos"></ul>
             <button type="button" id="btn-salir" class="boton boton-secundario">Cerrar sesión</button>
         </section>
 

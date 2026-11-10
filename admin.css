@@ -225,3 +225,21 @@ h1 {
     font-weight: 700;
     text-align: left;
 }
+
+/* Botón pequeño para borrar un producto */
+.btn-borrar {
+    padding: 4px 14px;
+    border: 1px solid var(--frambuesa);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--frambuesa);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-borrar:hover {
+    background-color: var(--frambuesa);
+    color: white;
+}

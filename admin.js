@@ -159,7 +159,14 @@ async function cargarProductos() {
             const descripcion = document.createElement("p");
             descripcion.textContent = producto.descripcion;
 
-            item.append(nombre, precio, descripcion);
+            // Botón para borrar este producto
+            const btnBorrar = document.createElement("button");
+            btnBorrar.type = "button";
+            btnBorrar.className = "btn-borrar";
+            btnBorrar.textContent = "Borrar";
+            btnBorrar.addEventListener("click", () => borrarProducto(producto._id, producto.nombre));
+
+            item.append(nombre, precio, descripcion, btnBorrar);
             listaProductos.appendChild(item);
         });
 
@@ -236,6 +243,43 @@ async function agregarProducto(evento) {
     } finally {
         btnAgregar.disabled = false;
         btnAgregar.textContent = "Agregar producto";
+    }
+}
+
+/**
+ * Borra un producto. Antes pregunta si están seguros, para no borrar por accidente.
+ * Manda el token, porque solo un administrador puede borrar.
+ */
+async function borrarProducto(id, nombre) {
+    if (!confirm(`¿Seguro que quieres borrar "${nombre}"?`)) {
+        return;
+    }
+
+    const token = sessionStorage.getItem("token");
+
+    try {
+        const respuesta = await fetch(`${API_URL}/api/productos/${id}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        // El token venció o no es de un administrador
+        if (respuesta.status === 401 || respuesta.status === 403) {
+            cerrarSesion();
+            mostrarError("Tu sesión venció. Vuelve a entrar.");
+            return;
+        }
+
+        if (!respuesta.ok) {
+            const datos = await respuesta.json();
+            mostrarMensajeProducto(datos.error || "No se pudo borrar el producto.", true);
+            return;
+        }
+
+        mostrarMensajeProducto("Producto borrado.", false);
+        cargarProductos();
+    } catch (error) {
+        mostrarMensajeProducto("No se pudo conectar con el servidor.", true);
     }
 }
 

@@ -1,0 +1,3 @@
+# Carpetas y archivos que Git NO debe subir a GitHub
+node_modules/
+config.js
